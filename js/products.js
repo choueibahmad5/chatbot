@@ -14,15 +14,6 @@ window.LOVA_CATEGORIES = [
 ];
 
 window.LOVA_PRODUCTS = [
-  { id: "PC-01", name: "جوارب طويلة ميلادية", category: "socks", img: "assets/img/products/pc-01.jpg" },
-  { id: "PC-02", name: "مطارة دبدوب للأطفال", category: "bottles", img: "assets/img/products/pc-02.jpg" },
-  { id: "PC-03", name: "طاقية أطفال قطيفة", category: "kids", img: "assets/img/products/pc-03.jpg" },
-  { id: "PC-04", name: "طاقية أطفال بكرة", category: "kids", img: "assets/img/products/pc-04.jpg" },
-  { id: "PC-05", name: "ليغنغ أطفال حراري", category: "kids", img: "assets/img/products/pc-05.jpg" },
-  { id: "PC-06", name: "شال كشمير بشراشيب", category: "accessories", img: "assets/img/products/pc-06.jpg" },
-  { id: "PC-07", name: "طاقية رجالي", category: "accessories", img: "assets/img/products/pc-07.jpg" },
-  { id: "PC-08", name: "جوارب شتوية مبطّنة", category: "socks", img: "assets/img/products/pc-08.jpg" },
-  { id: "PC-09", name: "طقم جوارب أطفال", category: "kids", img: "assets/img/products/pc-09.jpg" },
   { id: "PC-10", name: "كيلوت نمري", category: "inner", img: "assets/img/products/pc-10.jpg" },
   { id: "PC-11", name: "كيلوت ريبانا قطن", category: "inner", img: "assets/img/products/pc-11.jpg" },
   { id: "PC-12", name: "حمالة صدر", category: "inner", img: "assets/img/products/pc-12.jpg" },
@@ -57,10 +48,8 @@ window.LOVA_PRODUCTS = [
   { id: "PC-41", name: "شباشب فرو ناعم", category: "socks", img: "assets/img/products/pc-41.jpg" },
   { id: "PC-42", name: "بلوزة فليس بقبعة كوالا", category: "lounge", img: "assets/img/products/pc-42.jpg" },
   { id: "PC-43", name: "بيجامة ساتان وردي", category: "lounge", img: "assets/img/products/pc-43.jpg" },
-  { id: "PC-44", name: "مطارة حافظة للحرارة", category: "bottles", img: "assets/img/products/pc-44.jpg" },
   { id: "PC-45", name: "مطارة أطفال بملحقات", category: "kids", img: "assets/img/products/pc-45.jpg" },
   { id: "PC-46", name: "بيجامة أطفال", category: "kids", img: "assets/img/products/pc-46.jpg" },
-  { id: "PC-47", name: "مطارة ستيتش أطفال", category: "kids", img: "assets/img/products/pc-47.jpg" },
   { id: "PC-48", name: "ترمس حافظ للحرارة", category: "bottles", img: "assets/img/products/pc-48.jpg" },
   { id: "PC-49", name: "شورت بيجامة", category: "lounge", img: "assets/img/products/pc-49.jpg" },
   { id: "PC-50", name: "مطارة بشفّاطة", category: "bottles", img: "assets/img/products/pc-50.jpg" },

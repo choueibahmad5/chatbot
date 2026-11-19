@@ -11,6 +11,8 @@ const LOVA_CONFIG = {
   currencyLabel: "دولار",
   deliveryNote: "الدفع عند الاستلام · التوصيل لكل لبنان",
   storeName: "LOVA",
+  // بلا أسعار: الأسعار بتنعطى عالواتساب. خلّيها true لما تحطّي أسعار المنتجات.
+  showPrices: false,
 };
 
 /* ---------- حالة السلّة (تُحفظ محلياً بالمتصفح) ---------- */
@@ -75,7 +77,7 @@ function renderProducts() {
         <h3 class="product-name">${p.name}</h3>
         <p class="product-desc">${p.desc || ""}</p>
         <div class="product-foot">
-          <span class="product-price">${money(p.price)}</span>
+          ${(LOVA_CONFIG.showPrices && p.price) ? `<span class="product-price">${money(p.price)}</span>` : `<span class="product-ask">للسعر راسلينا 💬</span>`}
           <button class="lova-button add-btn" data-add="${p.id}">أضيفي للسلّة</button>
         </div>
       </div>
@@ -98,7 +100,7 @@ function renderCart() {
         <img src="${p.img}" alt="">
         <div class="cart-item-info">
           <strong>${p.name}</strong>
-          <span class="lova-muted">${money(p.price)}</span>
+          ${(LOVA_CONFIG.showPrices && p.price) ? `<span class="lova-muted">${money(p.price)}</span>` : ``}
         </div>
         <div class="qty">
           <button data-dec="${id}" aria-label="تنقيص">−</button>
@@ -109,7 +111,12 @@ function renderCart() {
       </div>`;
     }).join("");
   }
-  document.getElementById("cartTotal").textContent = money(cartTotal());
+  if (LOVA_CONFIG.showPrices) {
+    document.getElementById("cartTotal").textContent = money(cartTotal());
+  } else {
+    const totalRow = document.querySelector(".cart-total-row");
+    if (totalRow) totalRow.style.display = "none";
+  }
   document.querySelectorAll(".cart-count").forEach(el => {
     el.textContent = cartCount();
     el.hidden = cartCount() === 0;
@@ -149,9 +156,10 @@ function checkout() {
   msg += `%0A*الطلبية:*%0A`;
   Object.entries(cart).forEach(([id, qty]) => {
     const p = productById(id); if (!p) return;
-    msg += `• ${p.name} ×${qty} — ${money(p.price * qty)}%0A`;
+    msg += LOVA_CONFIG.showPrices ? `• ${p.name} ×${qty} — ${money(p.price * qty)}%0A` : `• ${p.name} ×${qty}%0A`;
   });
-  msg += `%0A*المجموع: ${money(cartTotal())}*%0A`;
+  if (LOVA_CONFIG.showPrices) msg += `%0A*المجموع: ${money(cartTotal())}*%0A`;
+  else msg += `%0Aبليز أكّدولي الأسعار والتوفّر 🙏%0A`;
   msg += `(${LOVA_CONFIG.deliveryNote})`;
 
   const text = encodeURIComponent(decodeURIComponent(msg));

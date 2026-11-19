@@ -49,6 +49,7 @@ html{scroll-behavior:smooth}
 .product-desc{margin:0 0 14px;font-size:13px;color:var(--lova-muted);line-height:1.6;flex:1}
 .product-foot{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .product-price{font:700 18px var(--lova-font-ui);color:var(--lova-ink)}
+.product-ask{font:600 13px var(--lova-font-ui);color:var(--lova-wine);white-space:nowrap}
 .add-btn{min-height:42px;padding:8px 16px;font-size:13.5px}
 
 /* brand line */

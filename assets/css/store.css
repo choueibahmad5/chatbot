@@ -76,7 +76,7 @@ html{scroll-behavior:smooth}
 .cart-overlay{position:fixed;inset:0;background:rgba(43,32,37,.42);opacity:0;visibility:hidden;transition:.2s;z-index:50}
 .cart-overlay.show{opacity:1;visibility:visible}
 .cart-drawer{position:fixed;top:0;inset-inline-start:0;height:100%;width:420px;max-width:92vw;background:var(--lova-cream);z-index:60;transform:translateX(-105%);transition:transform .28s;display:flex;flex-direction:column;box-shadow:0 0 40px rgba(0,0,0,.18)}
-[dir="rtl"] .cart-drawer{inset-inline-start:0;transform:translateX(-105%)}
+[dir="rtl"] .cart-drawer{inset-inline-start:0;transform:translateX(105%)}
 .cart-drawer.open{transform:translateX(0)}
 .cart-head{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--lova-line)}
 .cart-head h2{margin:0;font-size:20px;color:var(--lova-wine)}

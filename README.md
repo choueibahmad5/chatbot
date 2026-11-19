@@ -1,19 +1,82 @@
-# 💬 Chatbot template
+# LOVA | متجر lova-lb.shop
 
-A simple Streamlit app that shows how to build a chatbot using OpenAI's GPT-3.5.
+متجر إلكتروني بهوية **LOVA** — واجهة عربية RTL، تشكيلة منتجات مع فلترة بالفئات، سلّة شراء، وإتمام الطلب عبر **واتساب** (الدفع عند الاستلام).
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://chatbot-template.streamlit.app/)
+موقع ثابت (HTML/CSS/JS) بدون قاعدة بيانات أو سيرفر — سريع ومجاني الاستضافة.
 
-### How to run it on your own machine
+---
 
-1. Install the requirements
+## 🔧 أول 3 أشياء لازم تعملها
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+### 1) بدّل رقم الواتساب (مهم جداً)
+افتح `js/store.js` وبدّل السطر:
+```js
+whatsapp: "9610000000",   // ← حط رقمك الفعلي
+```
+الصيغة: رمز الدولة + الرقم بدون `+` وبدون صفر أول وبدون مسافات.
+مثال لبنان: الرقم `70 123 456` بيصير `9617012 3456` → تكتبه `96170123456`.
 
-2. Run the app
+### 2) بدّل المنتجات التجريبية بمنتجاتك
+كل المنتجات موجودة بملف `js/products.js`. كل منتج هيك:
+```js
+{ id: "LV-101", name: "اسم المنتج", price: 38, category: "bags",
+  img: "assets/img/products/bag-mini-burgundy.svg",
+  desc: "وصف قصير", badge: "الأكثر طلباً" },
+```
+- `price` بالدولار. `badge` اختياري (احذفه إذا ما بدك).
+- الفئات المتاحة: `bags` `gifts` `fragrance` `beauty` `accessories` `wallets` `toys`.
+- لإضافة **صور منتجاتك الحقيقية**: حط الصورة بمجلد `assets/img/products/` وغيّر قيمة `img`. الأفضل صورة مربّعة (مثلاً 800×800).
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+### 3) ارفع الموقع واربطه بالدومين
+انظر قسم النشر تحت. ⬇️
+
+---
+
+## 🚀 النشر وربط الدومين lova-lb.shop
+
+### الخيار أ — Cloudflare Pages (موصى به، مجاني)
+1. ادخل على [dash.cloudflare.com](https://dash.cloudflare.com) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
+2. اختر هذا الريبو، الفرع، واترك إعدادات الـ Build فاضية (Framework preset: **None**، Output directory: `/`).
+3. بعد النشر، روح **Custom domains** → أضف `lova-lb.shop` و`www.lova-lb.shop`.
+4. إذا الدومين مسجّل عند مزوّد تاني، حوّل الـ Nameservers لـ Cloudflare (بيعطيك ياهن)، أو أضف سجلّات DNS اللي بيطلبها.
+
+### الخيار ب — Netlify (مجاني)
+1. [app.netlify.com](https://app.netlify.com) → **Add new site** → **Import from Git** (أو اسحب مجلد المشروع يدوياً).
+2. Build command: فاضي · Publish directory: `/` (الجذر).
+3. **Domain settings** → **Add custom domain** → `lova-lb.shop` → اتبع إعدادات DNS.
+
+### الخيار ج — GitHub Pages
+الريبو جاهز (فيه ملف `CNAME` و`.nojekyll`). من إعدادات الريبو → **Pages** → Source: فرع النشر، مجلد `/root`. الدومين موجود بملف `CNAME`.
+
+> ملف `CNAME` بجذر المشروع فيه `lova-lb.shop` وبيُستخدم من GitHub Pages تلقائياً.
+
+---
+
+## 📁 بنية المشروع
+```
+index.html              الصفحة الرئيسية (كل المتجر بصفحة وحدة)
+CNAME                   اسم الدومين (lova-lb.shop)
+assets/
+  css/brand.css         أسس الهوية (ألوان، خطوط، أزرار)
+  css/store.css         تنسيق المتجر
+  fonts/                خطوط Cairo + Manrope + Cormorant (رخص OFL)
+  logos/                شعارات ورمز القلب والنمط
+  icons/                أيقونات الفئات
+  img/                  الهيرو، الفافيكون، صورة البروفايل
+  img/products/         صور المنتجات (بدّلها بصورك)
+js/
+  products.js           بيانات المنتجات ← عدّل هون
+  store.js              السلّة + إتمام الطلب (رقم الواتساب هون)
+```
+
+## ✅ شو شغّال
+- تصفّح وفلترة المنتجات حسب الفئة.
+- سلّة شراء بتنحفظ بالمتصفح (localStorage) — ما بتروح إذا عمل Refresh.
+- زيادة/تنقيص/حذف من السلّة.
+- إتمام الطلب → بيفتح واتساب برسالة فيها تفاصيل الطلبية والمجموع.
+- متجاوب كامل (موبايل + كمبيوتر)، وRTL عربي.
+
+## 📝 ملاحظات
+- الأسعار بالدولار الأميركي. لتغيير العملة: `currency` و`currencyLabel` بملف `js/store.js`.
+- صور المنتجات الحالية **تجريبية** (رسومات مؤقتة). استبدلها بصور بضاعتك الفعلية قبل الإطلاق الجدّي.
+- ما في دفع أونلاين بالبطاقة (حسب اختيارك: واتساب + دفع عند الاستلام). لإضافته لاحقاً بينفع نركّب بوابة دفع.

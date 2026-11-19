@@ -1,0 +1,33 @@
+/* LOVA brand foundation — fonts, tokens, base components */
+@font-face{font-family:Cairo;src:url('../fonts/Cairo-Regular.woff') format('woff');font-weight:400;font-display:swap}
+@font-face{font-family:Cairo;src:url('../fonts/Cairo-SemiBold.woff') format('woff');font-weight:600;font-display:swap}
+@font-face{font-family:Cairo;src:url('../fonts/Cairo-Bold.woff') format('woff');font-weight:700;font-display:swap}
+@font-face{font-family:Manrope;src:url('../fonts/Manrope-Regular.woff') format('woff');font-weight:400;font-display:swap}
+@font-face{font-family:Manrope;src:url('../fonts/Manrope-SemiBold.woff') format('woff');font-weight:600;font-display:swap}
+@font-face{font-family:'Cormorant Garamond';src:url('../fonts/CormorantGaramond-SemiBold.woff') format('woff');font-weight:600;font-display:swap}
+:root{
+ --lova-wine:#681D36; --lova-wine-hover:#51152A;
+ --lova-cream:#FBF5EF; --lova-rose:#D6AAA8; --lova-sand:#E9D8C8;
+ --lova-ink:#2B2025; --lova-muted:#78656B; --lova-line:#DCCBC6; --lova-white:#fff;
+ --lova-font-ar:Cairo,Arial,sans-serif;
+ --lova-font-ui:Manrope,Cairo,Arial,sans-serif;
+ --lova-font-display:'Cormorant Garamond',Georgia,serif;
+ --lova-radius-button:10px; --lova-radius-card:18px; --lova-radius-pill:999px;
+ --lova-space-1:4px; --lova-space-2:8px; --lova-space-3:12px;
+ --lova-space-4:16px; --lova-space-6:24px; --lova-space-8:32px;
+ --lova-space-12:48px; --lova-space-16:64px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--lova-cream);color:var(--lova-ink);font-family:var(--lova-font-ar);font-size:16px;line-height:1.75}
+:lang(en){font-family:var(--lova-font-ui)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.lova-button{display:inline-flex;justify-content:center;align-items:center;gap:10px;min-height:48px;padding:12px 28px;background:var(--lova-wine);color:var(--lova-cream);border:1px solid var(--lova-wine);border-radius:var(--lova-radius-button);text-decoration:none;font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:background .15s}
+.lova-button:hover{background:var(--lova-wine-hover)}
+.lova-button:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--lova-wine);outline-offset:3px}
+.lova-button-secondary{background:transparent;color:var(--lova-wine)}
+.lova-button-secondary:hover{background:var(--lova-sand)}
+.lova-card{border:1px solid var(--lova-line);border-radius:var(--lova-radius-card);background:#fff}
+.lova-input{width:100%;min-height:48px;padding:12px 16px;font:inherit;border:1px solid var(--lova-line);border-radius:var(--lova-radius-button);background:#fff;color:var(--lova-ink)}
+.lova-muted{color:var(--lova-muted)}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}

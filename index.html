@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LOVA | كل شي بتحبّيه</title>
+  <meta name="description" content="شنط، هدايا، إكسسوارات، عطور ولمسات بتفرّحك كل يوم. اطلبي أونلاين والتوصيل لكل لبنان، الدفع عند الاستلام.">
+  <meta name="theme-color" content="#681D36">
+  <!-- Open Graph -->
+  <meta property="og:title" content="LOVA | كل شي بتحبّيه">
+  <meta property="og:description" content="شنط، هدايا، إكسسوارات ولمسات بتفرّحك كل يوم.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lova-lb.shop">
+  <meta property="og:image" content="https://lova-lb.shop/assets/img/hero.webp">
+  <link rel="icon" type="image/svg+xml" href="assets/img/LOVA_Favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/brand.css">
+  <link rel="stylesheet" href="assets/css/store.css">
+</head>
+<body>
+
+  <div class="topbar">شغلات حلوة، بتشبهِك ♡ — التوصيل لكل لبنان والدفع عند الاستلام</div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="wrap header-in">
+      <a href="#top" aria-label="LOVA الرئيسية"><img class="logo" src="assets/logos/LOVA_Logo_Burgundy.svg" alt="LOVA"></a>
+      <nav class="nav" aria-label="التنقّل">
+        <a href="#shop">التشكيلة</a>
+        <a href="#shop">الهدايا</a>
+        <a href="#about">عن LOVA</a>
+        <a href="#delivery">التوصيل</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" data-open-cart aria-label="السلّة">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 7h12l-1.2 11.2A2 2 0 0 1 14.8 20H9.2a2 2 0 0 1-2-1.8L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="cart-count" hidden>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap">
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow" lang="en">LITTLE THINGS. LOTS TO LOVE.</div>
+          <h1>كل شي<br>بتحبّيه.</h1>
+          <p>شنط، هدايا، إكسسوارات ولمسات بتفرّحك كل يوم. إلك... وللّي بتحبّيهن.</p>
+          <div class="hero-cta">
+            <a class="lova-button" href="#shop">اكتشفي التشكيلة <span aria-hidden="true">←</span></a>
+            <button class="lova-button lova-button-secondary" data-open-cart>شوفي سلّتك</button>
+          </div>
+          <div class="under-hero"><img src="assets/logos/LOVA_Symbol_Burgundy.svg" alt="">تفاصيل صغيرة، فرحة كبيرة.</div>
+        </div>
+        <div class="hero-visual">
+          <img src="assets/img/hero.webp" alt="تشكيلة LOVA: شنطة نبيذية وهدايا وعطر وإكسسوارات بألوان دافئة" width="1536" height="1024">
+        </div>
+      </section>
+
+      <!-- SHOP -->
+      <section id="shop">
+        <div class="section-head">
+          <h2>اختاري اللي بتحبّيه</h2>
+          <span>مختارات بتناسبك وبتفرّح اللي بتحبّيهن.</span>
+        </div>
+        <div class="cat-filters" id="catFilters" role="tablist" aria-label="الفئات"></div>
+        <div class="grid" id="productGrid"></div>
+      </section>
+
+      <!-- TRUST / DELIVERY -->
+      <section id="delivery" class="trust">
+        <div class="trust-item">
+          <img src="assets/icons/icon-delivery.svg" alt="">
+          <strong>توصيل لكل لبنان</strong>
+          <span>بنوصّلك طلبك لباب بيتك.</span>
+        </div>
+        <div class="trust-item">
+          <img src="assets/icons/icon-orders.svg" alt="">
+          <strong>الدفع عند الاستلام</strong>
+          <span>بتدفعي كاش وقت ما يوصلك.</span>
+        </div>
+        <div class="trust-item">
+          <img src="assets/icons/icon-gifts.svg" alt="">
+          <strong>تغليف هدية</strong>
+          <span>بنغلّفلك هديتك بلمسة LOVA.</span>
+        </div>
+      </section>
+    </div>
+
+    <!-- ABOUT / brand line -->
+    <section id="about" class="brand-line">
+      إلك... <img src="assets/logos/LOVA_Symbol_Burgundy.svg" alt="قلب"> وللّي بتحبّيهن.
+    </section>
+
+    <div class="wrap">
+      <footer class="footer">
+        <img src="assets/logos/LOVA_Logo_Burgundy.svg" alt="LOVA">
+        <p>تفاصيل صغيرة بتخلّي يومك أحلى.<br><span id="deliveryNote"></span></p>
+        <p lang="en">© 2026 LOVA · lova-lb.shop</p>
+      </footer>
+    </div>
+  </main>
+
+  <!-- FLOATING CART (mobile) -->
+  <button class="cart-fab" id="cartFab" aria-label="السلّة">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 7h12l-1.2 11.2A2 2 0 0 1 14.8 20H9.2a2 2 0 0 1-2-1.8L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+    <span class="cart-count" hidden>0</span>
+  </button>
+
+  <!-- CART DRAWER -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="سلّة الشراء">
+    <div class="cart-head">
+      <h2>سلّتك</h2>
+      <button class="cart-close" id="cartClose" aria-label="إغلاق">✕</button>
+    </div>
+    <div class="cart-body" id="cartItems"></div>
+    <div class="cart-foot">
+      <div class="cart-fields">
+        <input class="lova-input" id="custName" placeholder="اسمك (اختياري)" autocomplete="name">
+        <input class="lova-input" id="custArea" placeholder="منطقة التوصيل (اختياري)">
+      </div>
+      <div class="cart-total-row"><span>المجموع</span><strong id="cartTotal">$0</strong></div>
+      <p class="cart-delivery">الدفع عند الاستلام · التوصيل لكل لبنان</p>
+      <button class="lova-button checkout-btn" id="checkoutBtn" disabled>
+        <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.8 14.3c-.2.7-1.2 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.6-.6-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.2.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.8-.1 1.5z"/></svg>
+        إتمام الطلب عبر واتساب
+      </button>
+    </div>
+  </aside>
+
+  <script src="js/products.js"></script>
+  <script src="js/store.js"></script>
+</body>
+</html>
